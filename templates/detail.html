@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <select name="status">
+        {{if eq .todo.Status "Task1"}}
+        <option value="Task1" selected>Task1</option>
+        <option value="Task2">Task2</option>
+        <option value="Task3">Task3</option>
+        {{else if eq .todo.Status "Task2"}}
+        <option value="Task1" selected>Task1</option>
+        <option value="Task2">Task2</option>
+        <option value="Task3">Task3</option>
+        {{else}}
+        <option value="Task1" selected>Task1</option>
+        <option value="Task2">Task2</option>
+        <option value="Task3">Task3</option>
+        {{end}}
+    </select>
+</body>
+
+</html>

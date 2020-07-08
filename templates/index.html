@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 
 <html lang="ja">
+
 <head>
    <meta charset="UTF-8">
    <title>Test</title>
 </head>
+
 <body>
-   <h1>私は翔太郎です.</h1>
+   {{range .todos}}
+   <li>Description: {{.Text }}, State: {{ .Status }}
+      <label><a href="/detail/{{.ID}}">Edit</a></label>
+      <label><a href="/delete_check/{{.ID}}">Delete</a></label>
+   </li>
+   {{end}}
+
+   <form method="POST" action="/new">
+      <p>Description<input type="text" name="text" size="30" placeholder="入力しろ"></p>
+      <p>State
+         <select name="status">
+            <option value="Task1 new"></option>
+            <option value="Task2 old"></option>
+            <option value="Task3 end"></option>
+         </select>
+      </p>
+      <p><input type="submit" value="Send"></p>
+   </form>
 </body>
+
 </html>
